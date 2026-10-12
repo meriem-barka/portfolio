@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Métadonnées principales -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Mériem BARKA, développeuse web spécialisée en éco-conception et accessibilité numérique. Création de sites performants, durables et inclusifs."
+    />
+    <meta
+      name="keywords"
+      content="développeuse web, éco-conception, accessibilité numérique, sites web responsables, développement web durable, performance web, SEO, Mériem BARKA, Éco Click"
+    />
+    <meta name="author" content="Mériem BARKA - Éco Click" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Titre optimisé SEO -->
+    <title>
+      Éco Click | Mériem BARKA - Développement Web Durable & Accessibilité
+    </title>
+
+    <!-- Données structurées JSON-LD pour Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mériem BARKA",
+        "jobTitle": "Développeuse Web & Éco-conceptrice",
+        "url": "https://www.ecoclick.fr",
+        "sameAs": [
+          "https://www.linkedin.com/in/meriem-barka",
+          "https://github.com/meriem-barka"
+        ],
+        "description": "Développeuse web spécialisée en éco-conception et accessibilité numérique. Création de sites performants, durables et inclusifs.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Éco Click"
+        }
+      }
+    </script>
+
+    <!-- Police Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feuille de style externe -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/favicon-icon.png"
+    />
+
+    <!-- Couleur du thème pour mobile -->
+    <meta name="theme-color" content="#2e7d32" />
+
+    <!-- Script JS -->
+    <script src="assets/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Lien d'accessibilité pour passer au contenu -->
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+
+    <!-- Bande verte décorative -->
+    <div class="bande-verte" aria-hidden="true"></div>
+
+    <!-- Header (chargé dynamiquement via JS si besoin) -->
+    <div id="header-container"></div>
+
+    <div class="container">
+      <main id="main-content">
+        <!-- SECTION À PROPOS -->
+        <section id="about">
+          <h1>Mériem BARKA</h1>
+          <h2>ÉCO-CONCEPTRICE ET DÉVELOPPEUSE WEB</h2>
+          <blockquote>"Un web plus vert, plus efficace."</blockquote>
+          <a href="#services" class="btn-primary btn-animated"
+            >Découvrez mes offres</a
+          >
+
+          <div class="about-container">
+            <div class="about-photo">
+              <img
+                src="./assets/img/profil.webp"
+                alt="Portrait de Mériem BARKA, conceptrice et développeuse web"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-description">
+              <p>
+                Passionnée par l'éco-conception et le développement web durable,
+                je mets mon expertise au service de projets visant à réduire
+                l'empreinte écologique tout en créant des sites accessibles,
+                performants et respectueux de l'environnement.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION SERVICES -->
+        <section id="services">
+          <h2>Mes Services</h2>
+          <p>
+            Des solutions web responsables, accessibles et performantes pour
+            votre projet.
+          </p>
+
+          <div class="services-container">
+            <article class="service-card">
+              <h3>Création de sites web éco-responsables</h3>
+              <p>
+                Conception de sites modernes, légers et optimisés pour
+                l’environnement, adaptés à vos besoins et à votre activité.
+              </p>
+              <strong>Sites optimisés pour réduire l'empreinte carbone.</strong>
+            </article>
+
+            <article class="service-card">
+              <h3>Accessibilité web</h3>
+              <p>
+                J’améliore l’expérience utilisateur pour tous, en rendant votre
+                site accessible et intuitif.
+              </p>
+              <strong
+                >Accessibilité et expérience utilisateur renforcées.</strong
+              >
+            </article>
+
+            <article class="service-card">
+              <h3>Maintenance et optimisation</h3>
+              <p>
+                Je prends en charge la maintenance et l’optimisation SEO de
+                votre site pour améliorer ses performances et sa visibilité.
+              </p>
+              <strong>Performance et référencement améliorés.</strong>
+            </article>
+          </div>
+
+          <div class="cta-center">
+            <a href="/devis.html" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section id="contact">
+          <div class="contact-intro">
+            <h2>Contactez-moi</h2>
+            <p>
+              N'hésitez pas à me laisser un message pour toute question ou
+              demande de projet.
+            </p>
+          </div>
+
+          <div class="contact-content">
+            <div class="contact-form">
+              <form
+                action="envoyer.php"
+                method="POST"
+                aria-label="Formulaire de contact"
+              >
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required />
+
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="sujet">Sujet</label>
+                <input type="text" id="sujet" name="sujet" required />
+
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+
+                <button type="submit" class="btn-primary">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+/* ===================================================
+   1. RÉINITIALISATION ET POLICES
+   =================================================== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Assurer que html et body prennent toute la hauteur */
+html,
+body {
+  height: 100%;
+  background-color: white;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Gistesy";
+  src: url("../fonts/Gistesy.woff2") format("woff2"),
+    url("../fonts/Gistesy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================================
+   2. SKIP LINK (ACCESSIBILITÉ)
+   =================================================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #2e7d32;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ===================================================
+   3. BANDE VERTE EN HAUT
+   =================================================== */
+.bande-verte {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1c482d;
+  height: 40px;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ===================================================
+   4. NAVIGATION
+   =================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-links li {
+  margin: 0 15px;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header nav a.active {
+  color: #2c7a7b;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+#nav-links a:hover {
+  color: #2e7d32;
+}
+
+#nav-links a.devis-link {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+#nav-links a.devis-link:hover {
+  opacity: 1;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background: none;
+  border: none;
+}
+
+.burger-menu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: translateX(8px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Navigation mobile */
+@media screen and (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+  .burger-menu {
+    display: flex;
+    margin-right: 20px;
+  }
+}
+
+/* ===================================================
+   5. BOUTONS
+   =================================================== */
+.btn,
+.btn-primary {
+  margin-top: 2em;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn {
+  background-color: #1c482d;
+}
+
+.btn:hover {
+  background-color: #1b5e20;
+}
+
+.btn-primary {
+  margin-bottom: 15px;
+  background-color: #1c482d;
+}
+
+.btn-primary:hover {
+  background-color: #1b5e20;
+}
+
+.cta-center {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ===================================================
+   6. SECTIONS GÉNÉRALES
+   =================================================== */
+section {
+  padding: 50px 20px;
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===================================================
+   7. ABOUT / À PROPOS
+   =================================================== */
+#about {
+  margin: 60px auto;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1000px;
+}
+
+#about h1 {
+  font-family: "Gistesy", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: #7b946a;
+}
+
+#about h2 {
+  font-size: 1.5rem;
+  color: #1c482d;
+  margin-bottom: 20px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}
+
+.about-photo,
+.about-description {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-photo {
+  border: 2px solid #333;
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-description {
+  border: 2px solid #333;
+  padding: 15px;
+  background-color: #7b946a;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-photo,
+  .about-description {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* ===================================================
+   8. SERVICES
+   =================================================== */
+#services {
+  padding: 2.7rem 1rem;
+  background-color: #7b946a;
+}
+
+.services-container {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+}
+
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.service-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+/* ===================================================
+   CORRECTIF FORMULAIRE DE CONTACT (Alignement vertical)
+   =================================================== */
+.contact-form form {
+  display: flex;
+  flex-direction: column; /* Force les champs à aller les uns sous les autres */
+  align-items: stretch;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* ===================================================
+   9. PAGE DEVIS
+   =================================================== */
+#devis .devis-container {
+  max-width: 700px;
+  margin: 120px auto 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#devis .devis-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#devis .devis-form label {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
+
+#devis .devis-form input[type="text"],
+#devis .devis-form input[type="email"],
+#devis .devis-form input[type="date"],
+#devis .devis-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+fieldset.form-group {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+fieldset.form-group legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+/* ===================================================
+   10. PORTFOLIO 
+   =================================================== */
+#portfolio {
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5rem 2rem;
+  margin: 0;
+  background-color: #7b946a;
+}
+
+#portfolio h1 {
+  color: white;
+  margin-top: 2rem;
+}
+
+#portfolio h2 {
+  margin: 0 auto 3rem auto;
+  color: #f0f0f0;
+  font-size: 1.2rem;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #2e7d32;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+/* ===================================================
+   11. PAGE BLOG
+   =================================================== */
+#blog {
+  background-color: #fff7eb;
+  padding: 8rem 2rem 4rem 2rem;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+#blog h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#blog .intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.article {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 360px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.article h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.article .meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.article p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.btn-read-more {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: #27632a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-read-more:hover {
+  background-color: #1c482d;
+}
+
+/* ===================================================
+   FOOTER (Pleine largeur et centré)
+   =================================================== */
+
+footer {
+  background-color: whitesmoke;
+  color: #333333;
+  padding: 30px 20px;
+  width: 100%;
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; /* Centre les blocs sur grand écran */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Espace harmonieux entre les blocs */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-info,
+.footer-socials {
+  text-align: center; /* Tout est centré à l'intérieur des blocs */
+}
+
+.footer-info h3,
+.footer-socials h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+  color: #1c482d; /* Rappel de votre vert principal */
+}
+
+.footer-info p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.footer-info a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column; /* Met le titre "Suivez-moi" au-dessus des icônes */
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-socials div,
+.footer-socials-icons {
+  display: flex;
+  gap: 15px; /* Espace entre chaque icône */
+}
+
+.footer-socials img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s, filter 0.2s;
+  vertical-align: middle;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ===================================================
+   13. MEDIA QUERIES GÉNÉRALES
+   =================================================== */
+/* Responsive mobile : empilé et centré */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

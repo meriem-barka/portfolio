@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Indication de l'emplacement exact du sitemap pour les robots
+Sitemap: https://www.eco-click.fr/sitemap.xml

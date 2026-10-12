@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Demandez un devis gratuit et personnalisé pour la création, la refonte, l'éco-conception ou l'audit d'accessibilité de votre site web avec Éco Click."
+    />
+    <meta
+      name="keywords"
+      content="devis site web, devis éco-conception, création site web éco-responsable, accessibilité numérique, Mériem BARKA, Éco Click"
+    />
+    <meta name="author" content="Mériem BARKA - Éco Click" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Demander un Devis Web Éco-conçu | Éco Click</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+    <!-- JS -->
+    <script src="assets/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Lien d'évitement (Accessibilité) -->
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+
+    <!-- Bande verte décorative -->
+    <div class="bande-verte" aria-hidden="true"></div>
+
+    <!-- Conteneur pour le header -->
+    <div id="header-container"></div>
+
+    <main id="main-content">
+      <section id="devis">
+        <div class="devis-container">
+          <h1>Demander un Devis</h1>
+          <p>
+            Complétez ce formulaire pour recevoir une proposition sur-mesure et
+            éco-conçue.
+          </p>
+
+          <form action="envoyer_devis.php" method="POST" class="devis-form">
+            <!-- NOM -->
+            <div class="form-group">
+              <label for="nom">Nom et Prénom *</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="email">Adresse e-mail *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <!-- SERVICES -->
+            <fieldset class="form-group">
+              <legend>Service(s) souhaité(s)</legend>
+
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="service-creation"
+                  name="services[]"
+                  value="creation"
+                />
+                <label for="service-creation"
+                  >Création de site web éco-responsable</label
+                >
+              </div>
+
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="service-accessibilite"
+                  name="services[]"
+                  value="accessibilite"
+                />
+                <label for="service-accessibilite"
+                  >Audit & Mise en accessibilité web</label
+                >
+              </div>
+
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="service-maintenance"
+                  name="services[]"
+                  value="maintenance"
+                />
+                <label for="service-maintenance"
+                  >Maintenance et optimisation de performance</label
+                >
+              </div>
+            </fieldset>
+
+            <!-- DESCRIPTION -->
+            <div class="form-group">
+              <label for="projet">Description du projet *</label>
+              <textarea
+                id="projet"
+                name="projet"
+                rows="5"
+                required
+                placeholder="Présentez brièvement vos besoins, vos objectifs ou votre activité..."
+              ></textarea>
+            </div>
+
+            <!-- BUDGET -->
+            <div class="form-group">
+              <label for="budget">Budget estimé (€)</label>
+              <input
+                type="text"
+                id="budget"
+                name="budget"
+                inputmode="decimal"
+                placeholder="Ex: 1500"
+              />
+            </div>
+
+            <!-- DEADLINE -->
+            <div class="form-group">
+              <label for="deadline">Date limite souhaitée</label>
+              <input type="date" id="deadline" name="deadline" />
+            </div>
+
+            <!-- COMMENTAIRES -->
+            <div class="form-group">
+              <label for="commentaires">Commentaires supplémentaires</label>
+              <textarea
+                id="commentaires"
+                name="commentaires"
+                rows="3"
+                placeholder="Informations ou précisions complémentaires..."
+              ></textarea>
+            </div>
+
+            <!-- RGPD -->
+            <div class="form-group checkbox-group rgpd-group">
+              <input type="checkbox" id="rgpd" name="rgpd" required />
+              <label for="rgpd">
+                J'accepte que mes données soient utilisées pour traiter ma
+                demande de devis. *
+              </label>
+            </div>
+
+            <!-- BOUTON -->
+            <button type="submit" class="btn-primary">
+              Envoyer ma demande
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Conteneur pour le footer -->
+    <div id="footer-container"></div>
+  </body>
+</html>
