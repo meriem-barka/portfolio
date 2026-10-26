@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Gistesy";
   src: url("../fonts/Gistesy.woff2") format("woff2"),
-       url("../fonts/Gistesy.woff") format("woff");
+    url("../fonts/Gistesy.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@ body {
 
 /* IMPORTANT : Compensation pour le header fixe afin de ne rien cacher */
 body {
-  padding-top: 100px; 
+  padding-top: 100px;
 }
 
 body.menu-open {
@@ -85,13 +85,13 @@ header {
   z-index: 1000;
   background-color: white;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  width: 150px;
+  width: 190px;
   height: auto;
-  max-height: 45px; /* Empêche le logo d'agrandir le header */
+  /* max-height: 45px; Empêche le logo d'agrandir le header */
   object-fit: contain;
 }
 
@@ -652,7 +652,7 @@ footer {
 @media screen and (max-width: 768px) {
   /* Réglage du padding haut sur mobile */
   body {
-    padding-top: 110px; 
+    padding-top: 110px;
   }
 
   /* Navigation mobile burger */
