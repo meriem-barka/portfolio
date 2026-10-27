@@ -1,6 +1,7 @@
 /* ===================================================
    1. RÉINITIALISATION, POLICES ET STYLES DE BASE
    =================================================== */
+/* Remplace `- {` par `* {` au tout début de ton fichier */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -91,7 +92,7 @@ header {
 .logo {
   width: 190px;
   height: auto;
-  /* max-height: 45px; Empêche le logo d'agrandir le header */
+  /*max-height: 45px; Empêche le logo d'agrandir le header */
   object-fit: contain;
 }
 
@@ -647,7 +648,103 @@ footer {
 }
 
 /* ===================================================
-   11. MEDIA QUERIES (RESPONSIVE DESIGN)
+   12. PAGES LÉGALES & FAQ (CGV, RGPD, FAQ)
+   =================================================== */
+
+.legal-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.legal-container h1 {
+    font-size: 2.2rem;
+    color: #1c482d;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.legal-container h2 {
+    font-size: 1.4rem;
+    color: #1c482d;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #7b946a;
+    padding-bottom: 5px;
+}
+
+.legal-container h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.legal-container p,
+.legal-container li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.legal-container ul,
+.legal-container ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Tableaux pour RGPD */
+.table-container {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+.legal-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+.legal-container th, 
+.legal-container td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.legal-container th {
+    background-color: #1c482d;
+    color: white;
+}
+
+.legal-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Lien de retour haut de page */
+.back-link {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.back-link a {
+    color: #7b946a;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: #1c482d;
+    text-decoration: underline;
+}
+
+/* ===================================================
+   12. MEDIA QUERIES (RESPONSIVE DESIGN)
    =================================================== */
 @media screen and (max-width: 768px) {
   /* Réglage du padding haut sur mobile */
